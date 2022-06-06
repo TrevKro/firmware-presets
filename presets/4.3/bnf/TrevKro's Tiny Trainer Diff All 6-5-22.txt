@@ -1,0 +1,150 @@
+#$ TITLE: TrevKro's Tiny Trainer Diff All 6/5/22
+#$ FIRMWARE_VERSION: 4.3
+#$ CATEGORY: BNF
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: BNF
+#$ AUTHOR: TrevKro
+#$ DESCRIPTION: Tiny Trainer version 6/5/22
+
+# version
+# Betaflight / STM32F405 (S405) 4.3.0 Apr 25 2022 / 01:02:32 (9d71184) MSP API: 1.44
+# config: manufacturer_id: BEFH, board_name: BETAFPVF405, version: d2a1f0ac, date: 2019-12-30T03:19:12Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name BETAFPVF405
+manufacturer_id BEFH
+mcu_id 002500393231470e37383139
+signature 
+
+# feature
+feature TELEMETRY
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 2 0 115200 57600 0 115200
+serial 3 1 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 2 1 1300 1700 0 0
+aux 2 13 2 1800 2100 0 0
+aux 3 35 1 1900 2100 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable powerlevels 3
+
+# master
+set gyro_lpf1_static_hz = 0
+set dyn_notch_count = 2
+set dyn_notch_q = 500
+set dyn_notch_min_hz = 200
+set dyn_notch_max_hz = 700
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 0
+set acc_calibration = -39,183,-47,1
+set rc_smoothing_auto_factor = 140
+set rc_smoothing_setpoint_cutoff = 25
+set rc_smoothing_feedforward_cutoff = 25
+set serialrx_provider = CRSF
+set dshot_idle_value = 700
+set dshot_bidir = ON
+set small_angle = 180
+set osd_units = IMPERIAL
+set osd_warn_batt_not_full = OFF
+set osd_warn_batt_critical = OFF
+set osd_warn_esc_fail = OFF
+set osd_warn_core_temp = OFF
+set osd_warn_launch_control = OFF
+set osd_vbat_pos = 2503
+set osd_rssi_pos = 2081
+set osd_link_quality_pos = 2074
+set osd_rssi_dbm_pos = 2049
+set osd_tim_1_pos = 406
+set osd_tim_2_pos = 2520
+set osd_remaining_time_estimate_pos = 2488
+set osd_flymode_pos = 2498
+set osd_throttle_pos = 2466
+set osd_vtx_channel_pos = 85
+set osd_ah_pos = 238
+set osd_mah_drawn_pos = 2514
+set osd_altitude_pos = 97
+set osd_warnings_pos = 14668
+set osd_avg_cell_voltage_pos = 2471
+set osd_disarmed_pos = 2348
+set osd_rcchannels_pos = 139
+set osd_displayport_device = MSP
+set vtx_channel = 1
+set vtx_freq = 0
+set displayport_msp_serial = 3
+set rpm_filter_fade_range_hz = 100
+
+profile 0
+
+# profile 0
+set anti_gravity_gain = 3000
+set iterm_relax_cutoff = 20
+set iterm_limit = 500
+set pidsum_limit_yaw = 1000
+set throttle_boost = 7
+set p_pitch = 42
+set i_pitch = 86
+set d_pitch = 50
+set f_pitch = 131
+set p_roll = 40
+set i_roll = 82
+set d_roll = 46
+set f_roll = 125
+set d_min_roll = 37
+set d_min_pitch = 40
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 45
+set feedforward_jitter_factor = 5
+set dyn_idle_min_rpm = 60
+set dyn_idle_p_gain = 35
+set simplified_pids_mode = RP
+set simplified_i_gain = 115
+set simplified_d_gain = 125
+set simplified_pi_gain = 90
+set simplified_dmax_gain = 70
+set simplified_feedforward_gain = 105
+set simplified_pitch_d_gain = 95
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set tpa_rate = 70
+set tpa_breakpoint = 1250
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
