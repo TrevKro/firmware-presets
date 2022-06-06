@@ -136,6 +136,7 @@
       "4.3"
     ],
     "category": [
+      "BNF",
       "FILTERS",
       "LEDS",
       "MODES",
@@ -145,13 +146,15 @@
       "VTX"
     ],
     "author": [
-      "Betaflight"
+      "Betaflight",
+      "TrevKro"
     ],
     "keywords": [
       "actual",
       "adjustments",
       "aux",
       "basic",
+      "BNF",
       "clear",
       "default",
       "defaults",
@@ -170,6 +173,21 @@
     ]
   },
   "presets": [
+    {
+      "fullPath": "presets/4.3/bnf/TrevKro's Tiny Trainer Diff All 6-5-22.txt",
+      "hash": "94cf0bc8f42873819d516bf001970a13de5a06f13f27e7af7d9e82d4550b56fa",
+      "title": "TrevKro's Tiny Trainer Diff All 6/5/22",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "BNF",
+      "status": "COMMUNITY",
+      "keywords": [
+        "BNF"
+      ],
+      "author": "TrevKro",
+      "priority": 0
+    },
     {
       "fullPath": "presets/4.3/filters/defaults.txt",
       "hash": "365d91285f53f2ad0a1521a158d498840143f2d566d511397ab19f2f402a920e",
