@@ -1,0 +1,159 @@
+#$ TITLE: TrevKro's Eachine Trashcan Diff All 6/5/22
+#$ FIRMWARE_VERSION: 4.3
+#$ CATEGORY: BNF
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: BNF
+#$ AUTHOR: TrevKro
+#$ DESCRIPTION: Eachine Trashcan version 6/5/22
+
+# version
+# Betaflight / STM32F411 (S411) 4.2.9 Apr 27 2021 / 19:33:23 (e097f4ab7) MSP API: 1.43
+# config: manufacturer_id: HAMO, board_name: CRAZYBEEF4FS, version: a074838b, date: 2021-06-14T21:36:54Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4FS
+manufacturer_id HAMO
+mcu_id 004000613030510436313837
+signature 
+
+# name: Trashcan
+
+# feature
+feature MOTOR_STOP
+feature TELEMETRY
+
+# beacon
+beacon RX_SET
+
+# serial
+serial 0 2048 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 1 1 1350 1650 0 0
+aux 2 2 1 1800 2100 0 0
+aux 3 13 2 1800 2100 0 0
+aux 4 35 1 1800 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5665 5885 5905 5905 5905
+vtxtable band 4 FATSHARK F CUSTOM  2740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 3
+vtxtable powerlabels 25 100 200
+
+# master
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 200
+set dyn_notch_min_hz = 90
+set dyn_notch_max_hz = 330
+set dyn_lpf_gyro_min_hz = 0
+set acc_trim_roll = -2
+set acc_calibration = 93,19,-20,1
+set mag_hardware = NONE
+set baro_hardware = NONE
+set fpv_mix_degrees = 15
+set serialrx_provider = CRSF
+set dshot_idle_value = 450
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set ibata_scale = 470
+set yaw_motors_reversed = ON
+set small_angle = 180
+set osd_warn_batt_not_full = OFF
+set osd_warn_batt_critical = OFF
+set osd_warn_launch_control = OFF
+set osd_warn_no_gps_rescue = OFF
+set osd_warn_gps_rescue_disabled = OFF
+set osd_vbat_pos = 2102
+set osd_rssi_pos = 2113
+set osd_flymode_pos = 2081
+set osd_vtx_channel_pos = 2453
+set osd_current_pos = 2432
+set osd_mah_drawn_pos = 2402
+set osd_craft_name_pos = 2090
+set osd_pidrate_profile_pos = 2137
+set osd_avg_cell_voltage_pos = 54
+set osd_rcchannels_pos = 149
+set osd_stat_tim_2 = OFF
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set vtx_band = 5
+set vtx_channel = 6
+set vtx_power = 3
+set vtx_freq = 5843
+set gyro_1_align_yaw = 900
+set gyro_rpm_notch_harmonics = 1
+set flysky_spi_tx_id = 1918921549
+set flysky_spi_rf_channels = 106,20,128,74,117,6,155,56,84,34,147,46,90,39,134,62
+set name = Trashcan
+
+profile 0
+
+# profile 0
+set p_pitch = 50
+set i_pitch = 50
+set d_pitch = 27
+set f_pitch = 60
+set p_roll = 46
+set i_roll = 45
+set d_roll = 25
+set f_roll = 60
+set i_yaw = 100
+set f_yaw = 100
+
+profile 1
+
+profile 2
+
+# profile 2
+set iterm_rotation = ON
+set p_pitch = 50
+set i_pitch = 50
+set d_pitch = 27
+set f_pitch = 60
+set p_roll = 46
+set i_roll = 45
+set d_roll = 25
+set f_roll = 60
+set i_yaw = 100
+set f_yaw = 100
+set d_min_roll = 20
+set d_min_pitch = 22
+set d_min_boost_gain = 27
+
+# restore original profile selection
+profile 2
+
+rateprofile 0
+
+rateprofile 1
+
+# rateprofile 1
+set roll_srate = 80
+set pitch_srate = 80
+set yaw_srate = 80
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
